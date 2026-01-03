@@ -1,0 +1,46 @@
+{
+  "name": "root",
+  "description": "Secure boilerplate for Electron app based on Vite",
+  "version": "3.1.0",
+  "private": true,
+  "type": "module",
+  "author": {
+    "email": "kozackunisoft@gmail.com",
+    "name": "Alex Kozack",
+    "url": "https://kozack.me"
+  },
+  "main": "packages/entry-point.mjs",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=23.0.0"
+  },
+  "packageManager": "npm@11.6.2",
+  "scripts": {
+    "build": "npx turbo build",
+    "compile": "npm run build && electron-builder build --config electron-builder.ts",
+    "test": "npx playwright test ./tests/e2e.spec.ts",
+    "start": "npm run build && node packages/dev-mode.js",
+    "typecheck": "npx turbo typecheck",
+    "create-renderer": "cd packages && node ./integrate-renderer/create-renderer.js",
+    "integrate-renderer": "npm start --workspace @app/integrate-renderer",
+    "init": "npm run create-renderer && npm run integrate-renderer && npm install",
+    "postinstall": "electron-builder install-app-deps",
+    "new-package": "npx turbo gen workspace"
+  },
+  "devDependencies": {
+    "@npmcli/map-workspaces": "5.0.3",
+    "@playwright/test": "1.57.0",
+    "@types/node": "25.0.3",
+    "create-vite": "8.2.0",
+    "electron": "39.2.7",
+    "electron-builder": "26.0.12",
+    "glob": "13.0.0",
+    "playwright": "^1.57.0",
+    "turbo": "^2.7.2"
+  },
+  "dependencies": {
+    "@app/main": "*"
+  }
+}
