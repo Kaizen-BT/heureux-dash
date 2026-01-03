@@ -41,7 +41,6 @@
     "turbo": "^2.7.2"
   },
   "dependencies": {
-    "@app/main": "*",
-    "electron-trpc": "^0.7.1"
+    "@app/main": "*"
   }
 }
