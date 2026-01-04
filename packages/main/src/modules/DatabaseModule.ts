@@ -2,6 +2,8 @@ import path from "node:path";
 import type { AppModule } from "../AppModule.js";
 import { ModuleContext } from "../ModuleContext.js";
 import { connectDatabase } from "@app/database";
+import { makeAPI } from "@app/api";
+import { serveAPIProxy } from "@app/ipc-bridge/server";
 
 /**
  * ApplicationDatabase module responsible for applying migrations
@@ -34,6 +36,10 @@ class ApplicationDatabase implements AppModule {
       sqliteFilePath,
       migrationsPath,
     });
+
+    // Setup and serve API
+    const api = makeAPI({ db });
+    serveAPIProxy({ api });
   }
 }
 

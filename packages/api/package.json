@@ -12,5 +12,8 @@
       "import": "./src/contract.ts",
       "require": "./dist/contract.js"
     }
+  },
+  "devDependencies": {
+    "@app/database": "*"
   }
 }
