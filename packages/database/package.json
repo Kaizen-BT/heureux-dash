@@ -25,9 +25,9 @@
       "require": "./dist/index.js"
     },
     "./queries": {
-      "types": "./src/queries-barrel.ts",
-      "import": "./src/queries-barrel.ts",
-      "require": "./dist/queries-barrel.js"
+      "types": "./src/queries.ts",
+      "import": "./src/queries.ts",
+      "require": "./dist/queries.js"
     }
   }
 }
