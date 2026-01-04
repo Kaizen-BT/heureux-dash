@@ -13,12 +13,13 @@ export function App() {
   return (
     <>
       <ComponentExample />
-      {data.map(({ name, description, urgency }) => {
+      {data.map(({ name, description, dueDate, urgency }) => {
         return (
           <>
             <p>{name}</p>
             <p>{description}</p>
             <p>{urgency}</p>
+            <p>{dueDate.toDateString()}</p>
           </>
         );
       })}
