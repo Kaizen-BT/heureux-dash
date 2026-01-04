@@ -1,19 +1,24 @@
 import { ComponentExample } from "@/components/component-example";
-import { getProjects } from "@app/preload";
+import { getMilestones, getProjects, getTasks } from "@app/preload";
 import { useLoaderData } from "react-router";
 
 export async function AppLoader() {
-  const data = await getProjects();
-  return data;
+  const [projects, milestones, tasks] = await Promise.all([
+    getProjects(),
+    getMilestones(),
+    getTasks(),
+  ]);
+
+  return { projects, milestones, tasks };
 }
 
 export function App() {
-  const data = useLoaderData<typeof AppLoader>();
+  const { projects, milestones, tasks } = useLoaderData<typeof AppLoader>();
 
   return (
     <>
       <ComponentExample />
-      {data.map(({ name, description, dueDate, urgency }) => {
+      {projects.map(({ name, description, dueDate, urgency }) => {
         return (
           <>
             <p>{name}</p>
@@ -23,6 +28,9 @@ export function App() {
           </>
         );
       })}
+
+      <p>{milestones.some(Boolean) ? "Milestones exist" : "No milestones"}</p>
+      <p>{tasks.some(Boolean) ? "Tasks exist" : "No tasks"}</p>
     </>
   );
 }
