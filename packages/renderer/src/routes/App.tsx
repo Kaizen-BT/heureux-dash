@@ -1,9 +1,9 @@
 import { ComponentExample } from "@/components/component-example";
-import { sayHi } from "@app/preload";
+import { getProjects } from "@app/preload";
 import { useLoaderData } from "react-router";
 
 export async function AppLoader() {
-  const data = await sayHi("Peni");
+  const data = await getProjects();
   return data;
 }
 
@@ -13,7 +13,7 @@ export function App() {
   return (
     <>
       <ComponentExample />
-      <p>{data}</p>
+      <p>{data.length === 0 ? "No Projects" : "Projects"}</p>
     </>
   );
 }

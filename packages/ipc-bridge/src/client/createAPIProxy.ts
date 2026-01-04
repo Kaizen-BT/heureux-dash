@@ -1,10 +1,7 @@
 import { ipcRenderer } from "electron";
-import type { APIProxyProps } from "../types";
 
 // Very primitive implementation of a proxy api
-export function createAPIProxy<T extends Record<string, Function>>({
-  api,
-}: APIProxyProps<T>) {
+export function createAPIProxy<T extends Record<string, Function>>() {
   const proxyHandler: ProxyHandler<T> = {
     get: (_, channel, __) => {
       console.log(`Calling: ${String(channel)}`);
@@ -19,5 +16,5 @@ export function createAPIProxy<T extends Record<string, Function>>({
     },
   };
 
-  return new Proxy(api, proxyHandler);
+  return new Proxy({} as T, proxyHandler);
 }
