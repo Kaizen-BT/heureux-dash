@@ -6,6 +6,6 @@ export function serveAPIProxy<T extends Record<string, Function>>({
   api,
 }: APIProxyProps<T>) {
   Object.entries(api).forEach(([channel, handler]) => {
-    ipcMain.handle(channel, (_, args) => handler(args));
+    ipcMain.handle(channel, (_, args) => handler(...args));
   });
 }
