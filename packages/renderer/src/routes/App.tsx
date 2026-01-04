@@ -13,7 +13,15 @@ export function App() {
   return (
     <>
       <ComponentExample />
-      <p>{data.length === 0 ? "No Projects" : "Projects"}</p>
+      {data.map(({ name, description, urgency }) => {
+        return (
+          <>
+            <p>{name}</p>
+            <p>{description}</p>
+            <p>{urgency}</p>
+          </>
+        );
+      })}
     </>
   );
 }
