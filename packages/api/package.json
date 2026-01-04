@@ -13,7 +13,7 @@
       "require": "./dist/contract.js"
     }
   },
-  "devDependencies": {
+  "dependencies": {
     "@app/database": "*"
   }
 }
