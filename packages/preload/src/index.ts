@@ -8,6 +8,6 @@ function send(channel: string, message: string) {
   return ipcRenderer.invoke(channel, message);
 }
 
-const { sayHi } = createAPIProxy({ api: APICONTRACT });
+export const { sayHi } = createAPIProxy({ api: APICONTRACT });
 
-export { sha256sum, versions, send, sayHi };
+export { sha256sum, versions, send };
