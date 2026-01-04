@@ -1,8 +1,8 @@
 import { sqliteTable } from "drizzle-orm/sqlite-core";
-import { baseShape, nameField } from "../schema-helpers.js";
+import { baseShape, nameField } from "../schema-helpers";
 import { relations } from "drizzle-orm/relations";
-import { tasks } from "./tasks.js";
-import { milestones } from "./milestones.js";
+import { tasks } from "./tasks";
+import { milestones } from "./milestones";
 
 export const projects = sqliteTable("projects", {
   ...baseShape,

@@ -1,4 +1,5 @@
-import type { BaseQueryProps } from "../types.js";
+import type { BaseQueryProps } from "../types";
+import { eq } from "drizzle-orm";
 
 export async function getProjects({ db }: BaseQueryProps) {
   return await db.query.projects.findMany();
@@ -10,7 +11,7 @@ interface GetProjectProps extends BaseQueryProps {
 
 export async function getProject({ db, id }: GetProjectProps) {
   const project = await db.query.projects.findFirst({
-    where: ({ id: projectId }, { eq }) => eq(projectId, id),
+    where: ({ id: projectId }) => eq(projectId, id),
   });
 
   return project;

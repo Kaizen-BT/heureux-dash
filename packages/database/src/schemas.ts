@@ -1,5 +1,5 @@
 // Barel exporter for schemas
 
-export * from "./schema/projects.js";
-export * from "./schema/milestones.js";
-export * from "./schema/tasks.js";
+export * from "./schema/projects";
+export * from "./schema/milestones";
+export * from "./schema/tasks";

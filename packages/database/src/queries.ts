@@ -1,3 +1,3 @@
-export * from "./queries/projects.js";
-export * from "./queries/milestones.js";
-export * from "./queries/tasks.js";
+export * from "./queries/projects";
+export * from "./queries/milestones";
+export * from "./queries/tasks";
