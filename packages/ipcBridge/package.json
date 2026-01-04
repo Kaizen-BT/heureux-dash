@@ -1,5 +1,5 @@
 {
-  "name": "@app/ipcBridge",
+  "name": "@app/ipc-bridge",
   "version": "0.0.0",
   "private": true,
   "scripts": {
