@@ -23,6 +23,11 @@
       "types": "./src/index.ts",
       "import": "./src/index.ts",
       "require": "./dist/index.js"
+    },
+    "./queries": {
+      "types": "./src/queries-barrel.ts",
+      "import": "./src/queries-barrel.ts",
+      "require": "./dist/queries-barrel.js"
     }
   }
 }
