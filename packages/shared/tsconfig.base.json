@@ -10,9 +10,6 @@
     "skipLibCheck": true,
     "strict": true,
     "isolatedModules": true,
-    "types": ["node"],
-    "paths": {
-      "@app/*": ["../*"]
-    }
+    "types": ["node"]
   }
 }
