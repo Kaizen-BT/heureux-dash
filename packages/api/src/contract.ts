@@ -1,9 +1,16 @@
 import type { AppDatabase } from "@app/database";
-import { getProjects } from "@app/database/queries";
+import { getMilestones, getProjects, getTasks } from "@app/database/queries";
 
 export function makeAPI({ db }: { db: AppDatabase }) {
   return {
+    // Projects
     getProjects: () => getProjects({ db }),
+
+    // Milestones
+    getMilestones: () => getMilestones({ db }),
+
+    // Tasks
+    getTasks: () => getTasks({ db }),
   };
 }
 
