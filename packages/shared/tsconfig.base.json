@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "rootDir": "${configDir}/src",
-    "outDir": "${configDir}/dist",
-    "allowSyntheticDefaultImports": true,
-    "module": "nodenext",
-    "target": "esnext",
-    "sourceMap": false,
-    "moduleResolution": "nodenext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "lib": ["ESNext"],
     "skipLibCheck": true,
     "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "verbatimModuleSyntax": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "types": ["node"],
-    "paths": {
-      "@app/*": ["../*"]
-    }
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
   }
 }
