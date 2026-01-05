@@ -26,8 +26,7 @@ export class QueryDriver {
   };
 
   /**
-   * Fetches the project matching the id specified. An undefined
-   * return will occur if no Project matches the id speicifed
+   * Fetches the project matching the id specified.
    *
    * @param {TProject["id"]} id id of the Project to fetch
    * @returns {AsyncNullable<TProject>}
@@ -52,6 +51,18 @@ export class QueryDriver {
     return await this.#db.query.milestones.findMany();
   };
 
+  /**
+   * Fetches the task matching the id specified
+   *
+   * @param {TMilestone["id"]} id
+   * @returns {AsyncNullable<TMilestone>}
+   */
+  getMilestone = async (id: TMilestone["id"]): AsyncNullable<TMilestone> => {
+    return await this.#db.query.milestones.findFirst({
+      where: ({ id: milestoneId }) => eq(milestoneId, id),
+    });
+  };
+
   // --- TASK QUERIES ---
 
   /**
@@ -62,5 +73,16 @@ export class QueryDriver {
    */
   getTasks = async (): AsyncCollection<TTask> => {
     return await this.#db.query.tasks.findMany();
+  };
+
+  /**
+   *
+   * @param {TTask["id"]} id
+   * @returns {AsyncNullable<TTask>}
+   */
+  getTask = async (id: TTask["id"]): AsyncNullable<TTask> => {
+    return this.#db.query.tasks.findFirst({
+      where: ({ id: taskId }) => eq(taskId, id),
+    });
   };
 }

@@ -9,7 +9,13 @@ function send(channel: string, message: string) {
 }
 
 // NOTE: There is no need for an actual API implementation since we just invoke ipcRenderer
-export const { getProjects, getMilestones, getTasks, getProject } =
-  createAPIProxy<IPCBridge>();
+export const {
+  getProjects,
+  getMilestones,
+  getTasks,
+  getProject,
+  getMilestone,
+  getTask,
+} = createAPIProxy<IPCBridge>();
 
 export { sha256sum, versions, send };
