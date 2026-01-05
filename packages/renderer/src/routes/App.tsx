@@ -1,7 +1,6 @@
 import { ComponentExample } from "@/components/component-example";
 import { getMilestones, getProject, getProjects, getTasks } from "@app/preload";
 import { useLoaderData } from "react-router";
-import { ProjectSelectSchema } from "@app/database/zod";
 
 export async function AppLoader() {
   const [projects, milestones, tasks] = await Promise.all([
@@ -15,7 +14,6 @@ export async function AppLoader() {
 
 export async function ProjectLoader() {
   const project = await getProject(1);
-  ProjectSelectSchema.parse(project);
   return project;
 }
 
