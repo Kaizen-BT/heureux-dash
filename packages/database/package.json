@@ -35,6 +35,11 @@
       "types": "./src/zod-types.ts",
       "import": "./src/zod-types.ts",
       "require": "./dist/zod-types.js"
+    },
+    "./zod": {
+      "types": "./src/zod.ts",
+      "import": "./src/zod.ts",
+      "require": "./dist/zod.js"
     }
   }
 }
