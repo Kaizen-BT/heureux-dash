@@ -30,6 +30,11 @@
       "types": "./src/queries.ts",
       "import": "./src/queries.ts",
       "require": "./dist/queries.js"
+    },
+    "./types": {
+      "types": "./src/zod-types.ts",
+      "import": "./src/zod-types.ts",
+      "require": "./dist/zod-types.js"
     }
   }
 }
