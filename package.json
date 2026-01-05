@@ -41,6 +41,7 @@
     "turbo": "^2.7.2"
   },
   "dependencies": {
-    "@app/main": "*"
+    "@app/main": "*",
+    "zod": "^4.3.5"
   }
 }
