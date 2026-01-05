@@ -1,5 +1,9 @@
 import type { AppDatabase } from "../index";
+import type { TProject, TMilestone, TTask } from "../zod-types";
 import { eq } from "drizzle-orm";
+
+type Collection<T> = Promise<T[]>;
+type Some<T> = Promise<T | undefined>;
 
 export class QueryDriver {
   // Keep private so ipc-bridge does not expose it
@@ -9,13 +13,26 @@ export class QueryDriver {
     this.#db = db;
   }
 
-  // Project Queries
+  // --- PROJECT QUERIES ---
 
-  getProjects = async () => {
+  /**
+   * Fetches all the Projects stored in the database
+   * in an array
+   *
+   * @returns {Collection<TProject>}
+   */
+  getProjects = async (): Collection<TProject> => {
     return await this.#db.query.projects.findMany();
   };
 
-  getProject = async (id: number) => {
+  /**
+   * Fetches the project matching the id specified. An undefined
+   * return will occur if no Project matches the id speicifed
+   *
+   * @param {TProject["id"]} id id of the Project to fetch
+   * @returns {Some<TProject>}
+   */
+  getProject = async (id: TProject["id"]): Some<TProject> => {
     const project = await this.#db.query.projects.findFirst({
       where: ({ id: projectId }) => eq(projectId, id),
     });
@@ -23,15 +40,27 @@ export class QueryDriver {
     return project;
   };
 
-  // Milestone Queries
+  // --- MILESTONE QUERIES ---
 
-  getMilestones = async () => {
+  /**
+   * Fetches all the Milestones stored in the database in
+   * an array
+   *
+   * @returns {Collection<TMilestone>}
+   */
+  getMilestones = async (): Collection<TMilestone> => {
     return await this.#db.query.milestones.findMany();
   };
 
-  // Task Queries
+  // --- TASK QUERIES ---
 
-  getTasks = async () => {
+  /**
+   * Fetches all the Tasks stored in the database in
+   * an array
+   *
+   * @returns {Collection<TTask>}
+   */
+  getTasks = async (): Collection<TTask> => {
     return await this.#db.query.tasks.findMany();
   };
 }
