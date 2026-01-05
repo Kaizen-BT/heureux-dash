@@ -1,6 +1,12 @@
 import { ComponentExample } from "@/components/component-example";
 import { getMilestones, getProject, getProjects, getTasks } from "@app/preload";
 import { useLoaderData } from "react-router";
+import { AppSidebar } from "@/components/app-sidebar";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
 
 export async function AppLoader() {
   const [projects, milestones, tasks] = await Promise.all([
@@ -20,6 +26,21 @@ export async function ProjectLoader() {
 export function App() {
   // const { projects, milestones, tasks } = useLoaderData<typeof AppLoader>();
   const project = useLoaderData<typeof ProjectLoader>();
+
+  return (
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarInset>
+        <header className="bg-background sticky top-0 flex h-16 shrink-0 items-center gap-2 border-b px-4">
+          <SidebarTrigger className="-ml-1" />
+        </header>
+        <div className="flex flex-1 flex-col gap-4 p-4">
+          <ComponentExample />
+          <p>{project?.name}</p>
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
+  );
 
   return (
     <>
