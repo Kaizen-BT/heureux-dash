@@ -1,3 +1,3 @@
-export interface APIProxyProps<T extends Record<string, Function>> {
+export interface APIProxyProps<T extends object> {
   api: T;
 }

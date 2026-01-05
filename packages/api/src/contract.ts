@@ -1,23 +1,8 @@
 import type { AppDatabase } from "@app/database";
-import {
-  getMilestones,
-  getProject,
-  getProjects,
-  getTasks,
-} from "@app/database/queries";
+import { QueryDriver } from "@app/database/queries";
 
 export function makeAPI({ db }: { db: AppDatabase }) {
-  return {
-    // Projects
-    getProjects: () => getProjects({ db }),
-    getProject: (id: number) => getProject({ db, id }),
-
-    // Milestones
-    getMilestones: () => getMilestones({ db }),
-
-    // Tasks
-    getTasks: () => getTasks({ db }),
-  };
+  return new QueryDriver(db);
 }
 
 export type IPCBridge = ReturnType<typeof makeAPI>;
