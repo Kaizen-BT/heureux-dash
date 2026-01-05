@@ -11,7 +11,7 @@ export function createAPIProxy<T extends object>() {
       }
 
       return (...args: any[]) => {
-        return ipcRenderer.invoke(channel, args);
+        return ipcRenderer.invoke(channel, ...args);
       };
     },
   };
