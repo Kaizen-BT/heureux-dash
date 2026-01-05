@@ -1,6 +1,8 @@
 import type { AppDatabase } from "./index";
 
-// Base interface for query functions
+/**
+ * @deprecated - use QueryDriver
+ */
 export interface BaseQueryProps {
   db: AppDatabase;
 }
