@@ -2,8 +2,8 @@ import type { AppDatabase } from "../index";
 import type { TProject, TMilestone, TTask } from "../zod-types";
 import { eq } from "drizzle-orm";
 
-type Collection<T> = Promise<T[]>;
-type Some<T> = Promise<T | undefined>;
+type AsyncCollection<T> = Promise<T[]>;
+type AsyncNullable<T> = Promise<T | undefined>;
 
 export class QueryDriver {
   // Keep private so ipc-bridge does not expose it
@@ -19,9 +19,9 @@ export class QueryDriver {
    * Fetches all the Projects stored in the database
    * in an array
    *
-   * @returns {Collection<TProject>}
+   * @returns {AsyncCollection<TProject>}
    */
-  getProjects = async (): Collection<TProject> => {
+  getProjects = async (): AsyncCollection<TProject> => {
     return await this.#db.query.projects.findMany();
   };
 
@@ -30,9 +30,9 @@ export class QueryDriver {
    * return will occur if no Project matches the id speicifed
    *
    * @param {TProject["id"]} id id of the Project to fetch
-   * @returns {Some<TProject>}
+   * @returns {AsyncNullable<TProject>}
    */
-  getProject = async (id: TProject["id"]): Some<TProject> => {
+  getProject = async (id: TProject["id"]): AsyncNullable<TProject> => {
     const project = await this.#db.query.projects.findFirst({
       where: ({ id: projectId }) => eq(projectId, id),
     });
@@ -46,9 +46,9 @@ export class QueryDriver {
    * Fetches all the Milestones stored in the database in
    * an array
    *
-   * @returns {Collection<TMilestone>}
+   * @returns {AsyncCollection<TMilestone>}
    */
-  getMilestones = async (): Collection<TMilestone> => {
+  getMilestones = async (): AsyncCollection<TMilestone> => {
     return await this.#db.query.milestones.findMany();
   };
 
@@ -58,9 +58,9 @@ export class QueryDriver {
    * Fetches all the Tasks stored in the database in
    * an array
    *
-   * @returns {Collection<TTask>}
+   * @returns {AsyncCollection<TTask>}
    */
-  getTasks = async (): Collection<TTask> => {
+  getTasks = async (): AsyncCollection<TTask> => {
     return await this.#db.query.tasks.findMany();
   };
 }
