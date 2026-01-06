@@ -7,7 +7,7 @@ import {
 import { Toaster } from "@/components/ui/sonner";
 import { Outlet } from "react-router";
 
-export function UILayout() {
+export function RootLayout() {
   return (
     <SidebarProvider>
       {/* TODO: Replace AppSidebar with a NavigationSideBar */}
