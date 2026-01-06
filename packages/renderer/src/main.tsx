@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import OverviewPage, { ProjectLoader } from "./routes/Overview.tsx";
+import OverviewPage, { ProjectLoader } from "./routes/overview.tsx";
 import { createHashRouter } from "react-router";
 import { RouterProvider } from "react-router";
 import { RootLayout } from "./layouts/root-layout.tsx";

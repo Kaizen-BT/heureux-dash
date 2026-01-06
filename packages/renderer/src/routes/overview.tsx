@@ -1,16 +1,7 @@
 import { ComponentExample } from "@/components/component-example";
-import { getMilestones, getProject, getProjects, getTasks } from "@app/preload";
+import { UniversalPageWrapper } from "@/layouts/universal";
+import { getProject } from "@app/preload";
 import { useLoaderData } from "react-router";
-
-export async function AppLoader() {
-  const [projects, milestones, tasks] = await Promise.all([
-    getProjects(),
-    getMilestones(),
-    getTasks(),
-  ]);
-
-  return { projects, milestones, tasks };
-}
 
 export async function ProjectLoader() {
   const project = await getProject(1);
@@ -22,10 +13,10 @@ export function OverviewPage() {
   const project = useLoaderData<typeof ProjectLoader>();
 
   return (
-    <>
+    <UniversalPageWrapper>
       <ComponentExample />
       <p>{project?.name}</p>
-    </>
+    </UniversalPageWrapper>
   );
 }
 
