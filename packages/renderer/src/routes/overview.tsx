@@ -10,7 +10,6 @@ export async function ProjectLoader() {
 }
 
 export function OverviewPage() {
-  // const { projects, milestones, tasks } = useLoaderData<typeof AppLoader>();
   const project = useLoaderData<typeof ProjectLoader>();
 
   return (
