@@ -4,17 +4,16 @@ import { ipcRenderer } from "electron";
 export function createAPIProxy<T extends object>() {
   const proxyHandler: ProxyHandler<T> = {
     get: (_, channel, __) => {
-      console.log(`Calling: ${String(channel)}`);
-
       if (typeof channel !== "string") {
         throw Error("Unsupported channel...");
       }
 
       return (...args: any[]) => {
+        console.log(`Calling: ${String(channel)}`);
         return ipcRenderer.invoke(channel, ...args);
       };
     },
   };
 
-  return new Proxy({} as T, proxyHandler);
+  return new Proxy<T>({} as T, proxyHandler);
 }
