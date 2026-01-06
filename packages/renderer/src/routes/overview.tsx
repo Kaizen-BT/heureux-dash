@@ -1,3 +1,4 @@
+import { AppSidebar } from "@/components/app-sidebar";
 import { ComponentExample } from "@/components/component-example";
 import { UniversalPageWrapper } from "@/layouts/universal";
 import { getProject } from "@app/preload";
@@ -13,7 +14,15 @@ export function OverviewPage() {
   const project = useLoaderData<typeof ProjectLoader>();
 
   return (
-    <UniversalPageWrapper>
+    <UniversalPageWrapper
+      pageSidebar={
+        <AppSidebar
+          side="right"
+          collapsible="none"
+          className="sticky top-0 hidden h-svh border-l lg:flex"
+        />
+      }
+    >
       <ComponentExample />
       <p>{project?.name}</p>
     </UniversalPageWrapper>
