@@ -1,4 +1,4 @@
-import { AppSidebar } from "@/components/app-sidebar";
+import { SidebarExample } from "@/components/sidebars/base-sidebar";
 import { Sidebar, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
 import type { PropsWithChildren, ReactElement } from "react";
@@ -13,7 +13,7 @@ export function UniversalPageWrapper({
 }: UPageWrapperProps) {
   return (
     <>
-      <AppSidebar />
+      <SidebarExample />
       <SidebarInset>
         <header className="bg-background sticky top-0 flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />

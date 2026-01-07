@@ -1,8 +1,9 @@
-import type { ComponentProps, ReactElement } from "react";
+import type { ReactElement } from "react";
+import type { ContentSidebarProps } from "@/components/sidebars/base-sidebar";
 import {
-  SidebarHeader,
   Sidebar,
   SidebarContent,
+  SidebarHeader,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router";
@@ -11,10 +12,6 @@ export interface NavSidebarContent {
   name: string;
   icon: ReactElement;
   path: string;
-}
-
-export interface ContentSidebarProps<T> extends ComponentProps<typeof Sidebar> {
-  sidebarContent: T[];
 }
 
 export function NavigationSidebar({
