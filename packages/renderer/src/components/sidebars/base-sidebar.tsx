@@ -9,7 +9,7 @@ import { SidebarCalendar } from "../date-picker";
 
 /**
  * Helper for sidebars that render content into SidebarContent
- * @see {@link https://ui.shadcn.com/docs/components/sidebar#structure}
+ * @see {@link https://ui.shadcn.com/docs/components/sidebar#structure|Shadcn Docs}
  */
 export interface ContentSidebarProps<T> extends ComponentProps<typeof Sidebar> {
   /**
