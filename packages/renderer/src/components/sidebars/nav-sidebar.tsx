@@ -6,18 +6,25 @@ import {
   SidebarHeader,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
-import { NavLink } from "react-router";
+import { NavLink, type RouteObject } from "react-router";
 
-export interface NavSidebarContent {
+export interface NavContent {
   name: string;
   icon: ReactElement;
-  path: string;
+  path: RouteObject["path"];
 }
 
+/**
+ * Used to render sidebars that facilitate navigation around
+ * the application
+ *
+ * @param {ContentSidebarProps<NavContent>} props
+ * @returns {ReactElement}
+ */
 export function NavigationSidebar({
   sidebarContent,
   ...props
-}: ContentSidebarProps<NavSidebarContent>) {
+}: ContentSidebarProps<NavContent>): ReactElement {
   return (
     <Sidebar {...props}>
       <SidebarHeader className="border-sidebar-border h-16 border-b">
@@ -26,7 +33,7 @@ export function NavigationSidebar({
       <SidebarContent>
         {sidebarContent.map(({ name, icon, path }, idx) => {
           return (
-            <NavLink to={path} key={idx}>
+            <NavLink to={path ?? ""} key={idx}>
               <Button>
                 {icon}
                 {name}
