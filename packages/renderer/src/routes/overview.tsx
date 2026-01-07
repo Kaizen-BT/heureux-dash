@@ -20,6 +20,7 @@ export function OverviewPage() {
           className="sticky top-0 hidden h-svh border-l lg:flex"
         />
       }
+      pageHeader={<h1>Overview</h1>}
     >
       <ComponentExample />
       <p>{project?.name}</p>
