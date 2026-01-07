@@ -34,7 +34,7 @@ export function NavigationSidebar({
         {sidebarContent.map(({ name, icon, path }, idx) => {
           return (
             <NavLink to={path ?? ""} key={idx}>
-              <Button variant={"outline"} className="w-full justify-start">
+              <Button variant={"ghost"} className="w-full justify-start">
                 {icon}
                 {name}
               </Button>
