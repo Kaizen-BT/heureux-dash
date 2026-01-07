@@ -1,6 +1,6 @@
 // import { SidebarExample } from "@/components/sidebars/base-sidebar";
 import { NavigationSidebar } from "@/components/sidebars/nav-sidebar";
-import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarInset } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
 import { FolderKanban, Home, LayoutList, Milestone } from "lucide-react";
 import type { PropsWithChildren, ReactElement } from "react";
@@ -22,7 +22,7 @@ interface UPageWrapperProps extends PropsWithChildren {
 
 export function UniversalPageWrapper({
   pageSidebar,
-  pageHeader,
+  // pageHeader,
   children,
 }: UPageWrapperProps) {
   return (
@@ -36,11 +36,8 @@ export function UniversalPageWrapper({
         ]}
       />
       <SidebarInset>
-        <header className="bg-background sticky top-0 flex h-16 shrink-0 items-center gap-2 border-b px-4">
-          <SidebarTrigger className="-ml-1" />
-          {pageHeader}
-        </header>
         <main className="flex flex-1 flex-col gap-4 p-4">{children}</main>
+
         <Toaster />
       </SidebarInset>
       {pageSidebar}

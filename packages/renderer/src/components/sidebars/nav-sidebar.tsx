@@ -4,6 +4,7 @@ import {
   Sidebar,
   SidebarContent,
   SidebarHeader,
+  SidebarRail,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { NavLink, type RouteObject } from "react-router";
@@ -27,7 +28,7 @@ export function NavigationSidebar({
 }: ContentSidebarProps<NavContent>): ReactElement {
   return (
     <Sidebar {...props}>
-      <SidebarHeader className="border-sidebar-border h-16 border-b">
+      <SidebarHeader className="border-sidebar-border h-16 border-b flex-row items-center">
         {/* TODO - Change later */}
         <h1 className="w-full h-full content-center">Dashboard</h1>
       </SidebarHeader>
@@ -43,6 +44,7 @@ export function NavigationSidebar({
           );
         })}
       </SidebarContent>
+      <SidebarRail />
     </Sidebar>
   );
 }
