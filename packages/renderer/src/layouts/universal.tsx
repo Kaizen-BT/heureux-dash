@@ -4,6 +4,11 @@ import { Toaster } from "@/components/ui/sonner";
 import type { PropsWithChildren, ReactElement } from "react";
 
 interface UPageWrapperProps extends PropsWithChildren {
+  /**
+   * A sidebar that contains content that aid's the current page
+   * content OR A sidebar that facilitates interactions relating
+   * to the current page
+   */
   pageSidebar?: ReactElement;
 }
 
