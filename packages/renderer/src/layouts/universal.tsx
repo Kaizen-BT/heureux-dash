@@ -13,10 +13,16 @@ interface UPageWrapperProps extends PropsWithChildren {
    * @see {@link https://ui.shadcn.com/view/new-york-v4/sidebar-15|Shadcn Sidebar Example}
    */
   pageSidebar?: ReactElement;
+
+  /**
+   * Element rendered on top of the main content of the page
+   */
+  pageHeader?: ReactElement;
 }
 
 export function UniversalPageWrapper({
   pageSidebar,
+  pageHeader,
   children,
 }: UPageWrapperProps) {
   return (
@@ -32,6 +38,7 @@ export function UniversalPageWrapper({
       <SidebarInset>
         <header className="bg-background sticky top-0 flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />
+          {pageHeader}
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4">{children}</main>
         <Toaster />

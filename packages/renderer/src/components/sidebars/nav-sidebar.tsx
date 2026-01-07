@@ -28,7 +28,8 @@ export function NavigationSidebar({
   return (
     <Sidebar {...props}>
       <SidebarHeader className="border-sidebar-border h-16 border-b">
-        {/* TODO */}
+        {/* TODO - Change later */}
+        <h1 className="w-full h-full content-center">Dashboard</h1>
       </SidebarHeader>
       <SidebarContent className="p-4">
         {sidebarContent.map(({ name, icon, path }, idx) => {
