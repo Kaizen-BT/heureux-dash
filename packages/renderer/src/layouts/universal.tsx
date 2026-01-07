@@ -1,10 +1,10 @@
 import { SidebarExample } from "@/components/sidebars/base-sidebar";
-import { Sidebar, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
 import type { PropsWithChildren, ReactElement } from "react";
 
 interface UPageWrapperProps extends PropsWithChildren {
-  pageSidebar?: ReactElement<typeof Sidebar>;
+  pageSidebar?: ReactElement;
 }
 
 export function UniversalPageWrapper({
