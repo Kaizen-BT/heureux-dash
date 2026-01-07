@@ -16,7 +16,6 @@ export function OverviewPage() {
     <UniversalPageWrapper
       pageSidebar={
         <SidebarExample
-          side="right"
           collapsible="none"
           className="sticky top-0 hidden h-svh border-l lg:flex"
         />
