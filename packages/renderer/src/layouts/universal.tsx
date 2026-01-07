@@ -5,9 +5,10 @@ import type { PropsWithChildren, ReactElement } from "react";
 
 interface UPageWrapperProps extends PropsWithChildren {
   /**
-   * A sidebar that contains content that aid's the current page
-   * content OR A sidebar that facilitates interactions relating
-   * to the current page
+   * A sidebar with aiding content or facilitates interactions
+   * relating to the current page
+   *
+   * @see {@link https://ui.shadcn.com/view/new-york-v4/sidebar-15|Shadcn Sidebar Example}
    */
   pageSidebar?: ReactElement;
 }
