@@ -11,7 +11,7 @@ import { NavLink, type RouteObject } from "react-router";
 export interface NavContent {
   name: string;
   icon: ReactElement;
-  path: RouteObject["path"];
+  path?: RouteObject["path"];
 }
 
 /**
@@ -30,11 +30,11 @@ export function NavigationSidebar({
       <SidebarHeader className="border-sidebar-border h-16 border-b">
         {/* TODO */}
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="p-4">
         {sidebarContent.map(({ name, icon, path }, idx) => {
           return (
             <NavLink to={path ?? ""} key={idx}>
-              <Button>
+              <Button variant={"outline"} className="w-full justify-start">
                 {icon}
                 {name}
               </Button>

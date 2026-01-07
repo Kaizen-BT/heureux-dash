@@ -1,6 +1,8 @@
-import { SidebarExample } from "@/components/sidebars/base-sidebar";
+// import { SidebarExample } from "@/components/sidebars/base-sidebar";
+import { NavigationSidebar } from "@/components/sidebars/nav-sidebar";
 import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
+import { FolderKanban, Home, LayoutList, Milestone } from "lucide-react";
 import type { PropsWithChildren, ReactElement } from "react";
 
 interface UPageWrapperProps extends PropsWithChildren {
@@ -19,7 +21,14 @@ export function UniversalPageWrapper({
 }: UPageWrapperProps) {
   return (
     <>
-      <SidebarExample />
+      <NavigationSidebar
+        sidebarContent={[
+          { name: "Home", icon: <Home /> },
+          { name: "Projects", icon: <FolderKanban /> },
+          { name: "Milestones", icon: <Milestone /> },
+          { name: "Tasks", icon: <LayoutList /> },
+        ]}
+      />
       <SidebarInset>
         <header className="bg-background sticky top-0 flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />
