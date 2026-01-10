@@ -3,7 +3,12 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Outlet } from "react-router";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { NavDock } from "@/components/docks/nav-dock";
-import { HomeIcon } from "lucide-react";
+import {
+  ChartLine,
+  HomeIcon,
+  LayoutDashboard,
+  PanelsTopLeft,
+} from "lucide-react";
 
 export function RootLayout() {
   return (
@@ -13,7 +18,14 @@ export function RootLayout() {
           <section className="flex h-full flex-col justify-center items-center">
             <Outlet />
           </section>
-          <NavDock items={[{ href: "/", icon: <HomeIcon />, label: "Home" }]} />
+          <NavDock
+            items={[
+              { href: "/", icon: <HomeIcon />, label: "Home" },
+              { href: "/", icon: <LayoutDashboard />, label: "Dashboard" },
+              { href: "/", icon: <PanelsTopLeft />, label: "Projects" },
+              { href: "/", icon: <ChartLine />, label: "Analytics" },
+            ]}
+          />
           <Toaster />
         </main>
       </TooltipProvider>
