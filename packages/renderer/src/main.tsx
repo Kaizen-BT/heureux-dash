@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import OverviewPage, { ProjectLoader } from "./routes/overview.tsx";
+import HomePage, { ProjectLoader } from "./routes/home.tsx";
 import { createHashRouter } from "react-router";
 import { RouterProvider } from "react-router";
 import { RootLayout } from "./layouts/root-layout.tsx";
@@ -8,7 +8,7 @@ import { RootLayout } from "./layouts/root-layout.tsx";
 const router = createHashRouter([
   {
     Component: RootLayout,
-    children: [{ index: true, Component: OverviewPage, loader: ProjectLoader }],
+    children: [{ index: true, Component: HomePage, loader: ProjectLoader }],
   },
 ]);
 
