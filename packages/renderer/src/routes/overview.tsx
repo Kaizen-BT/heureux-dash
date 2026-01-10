@@ -1,4 +1,3 @@
-import { UniversalPageWrapper } from "@/layouts/universal";
 import { getProject } from "@app/preload";
 import { Quote } from "@/components/quotes";
 
@@ -8,11 +7,7 @@ export async function ProjectLoader() {
 }
 
 export function OverviewPage() {
-  return (
-    <UniversalPageWrapper pageHeader={<h1>Overview</h1>}>
-      <Quote quote="Keep squares out yo circle" author="Kanye West" />
-    </UniversalPageWrapper>
-  );
+  return <Quote quote="Keep squares out yo circle" author="Kanye West" />;
 }
 
 export default OverviewPage;
