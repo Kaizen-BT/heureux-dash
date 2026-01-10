@@ -1,4 +1,5 @@
 // import { SidebarExample } from "@/components/sidebars/base-sidebar";
+import { DockDemo } from "@/components/docks";
 import { NavigationSidebar } from "@/components/sidebars/nav-sidebar";
 import { SidebarInset } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
@@ -36,7 +37,10 @@ export function UniversalPageWrapper({
         ]}
       />
       <SidebarInset>
-        <main className="flex flex-1 flex-col gap-4 p-4">{children}</main>
+        <main className="flex flex-1 flex-col gap-4 p-4">
+          {children}
+          <DockDemo />
+        </main>
 
         <Toaster />
       </SidebarInset>
