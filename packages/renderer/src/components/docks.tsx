@@ -7,7 +7,6 @@ import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Dock, DockIcon } from "@/components/ui/dock";
@@ -91,36 +90,35 @@ const DATA = {
 
 export function DockDemo() {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <TooltipProvider>
-        <Dock direction="middle">
-          {DATA.navbar.map((item) => (
-            <DockIcon key={item.label}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <item.icon className="size-4" />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
-          <Separator orientation="vertical" className="h-full" />
-          {Object.entries(DATA.contact.social).map(([name, social]) => (
-            <DockIcon key={name}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <social.icon className="size-4" />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
-        </Dock>
-      </TooltipProvider>
-    </div>
+    <Dock
+      direction="bottom"
+      className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2"
+    >
+      {DATA.navbar.map((item) => (
+        <DockIcon key={item.label}>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <item.icon className="size-4" />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{item.label}</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
+      ))}
+      <Separator orientation="vertical" className="h-full" />
+      {Object.entries(DATA.contact.social).map(([name, social]) => (
+        <DockIcon key={name}>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <social.icon className="size-4" />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{name}</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
+      ))}
+    </Dock>
   );
 }
