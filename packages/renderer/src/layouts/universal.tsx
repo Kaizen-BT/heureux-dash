@@ -36,11 +36,9 @@ export function UniversalPageWrapper({
           { name: "Tasks", icon: <LayoutList /> },
         ]}
       />
-      <SidebarInset>
-        <main className="flex flex-1 flex-col gap-4 p-4">
-          {children}
-          <DockDemo />
-        </main>
+      <SidebarInset className="p-4">
+        <main className="flex flex-1 flex-col gap-4">{children}</main>
+        <DockDemo />
 
         <Toaster />
       </SidebarInset>

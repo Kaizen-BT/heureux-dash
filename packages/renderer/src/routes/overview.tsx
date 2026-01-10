@@ -1,8 +1,8 @@
 import { SidebarExample } from "@/components/sidebars/base-sidebar";
-import { ComponentExample } from "@/components/component-example";
+
 import { UniversalPageWrapper } from "@/layouts/universal";
 import { getProject } from "@app/preload";
-import { useLoaderData } from "react-router";
+import { Quote } from "@/components/quotes";
 
 export async function ProjectLoader() {
   const project = await getProject(1);
@@ -10,8 +10,6 @@ export async function ProjectLoader() {
 }
 
 export function OverviewPage() {
-  const project = useLoaderData<typeof ProjectLoader>();
-
   return (
     <UniversalPageWrapper
       pageSidebar={
@@ -22,8 +20,7 @@ export function OverviewPage() {
       }
       pageHeader={<h1>Overview</h1>}
     >
-      <ComponentExample />
-      <p>{project?.name}</p>
+      <Quote quote="Keep squares out yo circle" author="Kanye West" />
     </UniversalPageWrapper>
   );
 }
