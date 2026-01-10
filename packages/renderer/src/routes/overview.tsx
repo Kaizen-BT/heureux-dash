@@ -7,7 +7,11 @@ export async function ProjectLoader() {
 }
 
 export function OverviewPage() {
-  return <Quote quote="These fries be bussin" author="Ur mom" />;
+  return (
+    <>
+      <Quote quote="These fries be bussin" author="Ur mom" />
+    </>
+  );
 }
 
 export default OverviewPage;
