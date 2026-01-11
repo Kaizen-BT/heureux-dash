@@ -23,10 +23,7 @@ interface NavDockProps {
 export function NavDock({ items }: NavDockProps) {
   const { theme } = useTheme();
   return (
-    <Dock
-      direction={"bottom"}
-      className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2"
-    >
+    <Dock direction={"bottom"} className="m-auto">
       {/* Navigation */}
       {items.map(({ href, icon, label }, idx) => (
         <DockIcon key={`nav-bar-item-${idx}`}>

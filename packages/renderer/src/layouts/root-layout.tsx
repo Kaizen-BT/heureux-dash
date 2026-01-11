@@ -15,7 +15,7 @@ export function RootLayout() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <TooltipProvider>
         {/* Dynamic Resize to center page content */}
-        <main className="min-h-screen w-full max-w-7xl mx-auto flex flex-col">
+        <main className="min-h-screen w-full max-w-7xl mx-auto flex flex-col pt-14 gap-8">
           {/* Page Content */}
           <Outlet />
 
