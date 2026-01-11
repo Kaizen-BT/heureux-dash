@@ -14,7 +14,7 @@ export function RootLayout() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <TooltipProvider>
-        <main className="h-screen p-8">
+        <main className="h-screen">
           <section className="flex h-full flex-col justify-center items-center">
             <Outlet />
           </section>
