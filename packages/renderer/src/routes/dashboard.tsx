@@ -55,7 +55,9 @@ export function TimelineDemo() {
       {timelineItems.map((item, idx) => (
         <TimelineItem
           key={item.id}
-          className={idx != timelineItems.length - 1 ? `flex-none w-1/2` : ``}
+          className={
+            idx != timelineItems.length - 1 ? `flex-none w-1/2` : `flex-none`
+          }
         >
           <TimelineDot />
           <TimelineConnector />
