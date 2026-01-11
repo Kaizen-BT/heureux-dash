@@ -23,7 +23,7 @@ export function DashboardPage() {
           <CardHeader>
             <CardTitle className="flex flex-row gap-2">
               <Bell className="w-5 h-5 self-center" />
-              <h2 className="text-xl">Project Progression</h2>
+              <h2 className="text-xl">Reminders</h2>
             </CardTitle>
           </CardHeader>
         </Card>
@@ -33,7 +33,7 @@ export function DashboardPage() {
           <CardHeader>
             <CardTitle className="flex flex-row gap-2">
               <ListTodo className="w-5 h-5 self-center" />
-              <h2 className="text-xl">Project Progression</h2>
+              <h2 className="text-xl">Upcoming Tasks</h2>
             </CardTitle>
           </CardHeader>
         </Card>
@@ -43,7 +43,7 @@ export function DashboardPage() {
           <CardHeader>
             <CardTitle className="flex flex-row gap-2">
               <Route className="w-5 h-5 self-center" />
-              <h2 className="text-xl">Project Progression</h2>
+              <h2 className="text-xl">Timeline</h2>
             </CardTitle>
           </CardHeader>
         </Card>
