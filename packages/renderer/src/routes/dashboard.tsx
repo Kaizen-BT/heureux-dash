@@ -1,3 +1,9 @@
+import { TypographyH1 } from "@/components/typography";
+
 export function DashboardPage() {
-  return <></>;
+  return (
+    <>
+      <TypographyH1>Dashboard</TypographyH1>
+    </>
+  );
 }

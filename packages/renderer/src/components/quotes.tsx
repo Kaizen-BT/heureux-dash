@@ -1,9 +1,11 @@
 import { TypographyH1 } from "@/components/typography";
+import { cn } from "@/lib/utils";
 import type { ReactElement } from "react";
 
 interface QuoteProps {
   quote: string;
   author?: string;
+  className?: string;
 }
 
 /**
@@ -15,9 +17,10 @@ interface QuoteProps {
 export function Quote({
   quote,
   author = "Anonymous",
+  className,
 }: QuoteProps): ReactElement {
   return (
-    <blockquote className="flex w-fit flex-col">
+    <blockquote className={cn("flex flex-col", className)}>
       <TypographyH1>{`" ${quote} "`}</TypographyH1>
       <TypographyH1
         variant={"foreground"}

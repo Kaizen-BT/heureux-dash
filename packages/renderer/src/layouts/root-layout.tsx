@@ -14,14 +14,19 @@ export function RootLayout() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <TooltipProvider>
-        <main className="h-screen">
-          <section className="flex h-full flex-col justify-center items-center">
-            <Outlet />
-          </section>
+        {/* Dynamic Resize to center page content */}
+        <main className="min-h-screen w-full max-w-7xl mx-auto flex flex-col">
+          {/* Page Content */}
+          <Outlet />
+
           <NavDock
             items={[
               { href: "/", icon: <HomeIcon />, label: "Home" },
-              { href: "/", icon: <LayoutDashboard />, label: "Dashboard" },
+              {
+                href: "/dashboard",
+                icon: <LayoutDashboard />,
+                label: "Dashboard",
+              },
               { href: "/", icon: <PanelsTopLeft />, label: "Projects" },
               { href: "/", icon: <ChartLine />, label: "Analytics" },
             ]}
