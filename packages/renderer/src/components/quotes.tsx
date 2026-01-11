@@ -1,3 +1,5 @@
+import { TypographyH1 } from "@/components/typography";
+
 interface QuoteProps {
   quote: string;
   author?: string;
@@ -6,8 +8,11 @@ interface QuoteProps {
 export function Quote({ quote, author = "Anonymous" }: QuoteProps) {
   return (
     <blockquote className="flex w-fit flex-col">
-      <h1 className="text-5xl text-primary font-bold">{`" ${quote} "`}</h1>
-      <h1 className="text-5xl text-foreground font-bold self-end">{`- ${author} . `}</h1>
+      <TypographyH1>{`" ${quote} "`}</TypographyH1>
+      <TypographyH1
+        variant={"foreground"}
+        className="self-end"
+      >{`- ${author} . `}</TypographyH1>
     </blockquote>
   );
 }

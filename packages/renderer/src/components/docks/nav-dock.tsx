@@ -49,7 +49,7 @@ export function NavDock({ items }: NavDockProps) {
             <AnimatedThemeToggler className="hover:cursor-pointer" />
           </TooltipTrigger>
           <TooltipContent>
-            <p>{theme === "dark" ? "light" : theme}</p>
+            <p>{theme === "dark" ? "Light Mode" : "Dark Mode"}</p>
           </TooltipContent>
         </Tooltip>
       </DockIcon>
