@@ -10,6 +10,8 @@ interface AnimatedThemeTogglerProps
   duration?: number;
 }
 
+// TODO: Consider moving the theme state to a parent
+
 export const AnimatedThemeToggler = ({
   className,
   duration = 400,
