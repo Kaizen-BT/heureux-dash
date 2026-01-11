@@ -29,7 +29,7 @@ export function NavDock({ items }: NavDockProps) {
     >
       {/* Navigation */}
       {items.map(({ href, icon, label }, idx) => (
-        <DockIcon key={`nav-bar-${idx}`}>
+        <DockIcon key={`nav-bar-item-${idx}`}>
           <Tooltip>
             <TooltipTrigger>
               <NavLink to={href ?? ""}>{icon}</NavLink>
