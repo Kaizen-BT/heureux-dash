@@ -4,17 +4,20 @@ import { cn } from "@/lib/utils";
 import type { ComponentProps, ReactElement } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-const headingOneVariants = cva(["text-5xl", "font-bold"], {
-  variants: {
-    variant: {
-      default: "text-primary",
-      foreground: "text-foreground",
+const headingOneVariants = cva(
+  ["text-3xl", "md:text-4xl", "lg:text-5xl", "font-bold"],
+  {
+    variants: {
+      variant: {
+        default: "text-primary",
+        foreground: "text-foreground",
+      },
     },
-  },
-  defaultVariants: {
-    variant: "default",
-  },
-});
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+);
 
 type TypographyH1Props = ComponentProps<"h1"> &
   VariantProps<typeof headingOneVariants>;
