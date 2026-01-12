@@ -1,10 +1,11 @@
 import { PageGrid } from "@/components/page-grid";
 import { TypographyH1 } from "@/components/typography";
-import { Bell, ListTodo } from "lucide-react";
 
-import { DashboardCard } from "@/components/cards/dashboard-card";
+// Cards
 import { ProgressionCard } from "@/components/cards/progress-card";
 import { TimelineCard } from "@/components/cards/timeline-card";
+import { ReminderCard } from "@/components/cards/reminder-card";
+import { UpcomingCard } from "./upcoming-card";
 
 export function DashboardPage() {
   return (
@@ -15,15 +16,10 @@ export function DashboardPage() {
         <ProgressionCard progress={45} />
 
         {/* Reminder Card */}
-        <DashboardCard title="Reminders" Icon={ListTodo} />
+        <ReminderCard />
 
         {/* Upcoming Tasks Card */}
-        <DashboardCard
-          rowVariant={"large"}
-          title="Upcoming Tasks"
-          description="The following tasks are due soon"
-          Icon={Bell}
-        />
+        <UpcomingCard />
 
         {/* Timeline Card */}
         <TimelineCard />
