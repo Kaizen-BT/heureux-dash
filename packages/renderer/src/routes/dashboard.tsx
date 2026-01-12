@@ -20,6 +20,7 @@ import {
   TimelineTitle,
 } from "@/components/ui/timeline";
 import { DashboardCard } from "@/components/cards/dashboard-card";
+import { DashboardIcon } from "@/components/icons/dashboard-icon";
 
 const timelineItems = [
   {
@@ -74,7 +75,7 @@ export function DashboardPage() {
         <DashboardCard>
           <CardHeader>
             <CardTitle className="flex flex-row gap-2">
-              <PanelsLeftBottom className="w-4 h-4 self-center" />
+              <DashboardIcon Icon={PanelsLeftBottom} />
               Project Progression
             </CardTitle>
             <CardDescription>Overall Overview</CardDescription>
@@ -85,7 +86,7 @@ export function DashboardPage() {
         <DashboardCard>
           <CardHeader>
             <CardTitle className="flex flex-row gap-2">
-              <Bell className="w-4 h-4 self-center" />
+              <DashboardIcon Icon={ListTodo} />
               Reminders
             </CardTitle>
           </CardHeader>
@@ -95,7 +96,7 @@ export function DashboardPage() {
         <DashboardCard className="row-span-2">
           <CardHeader>
             <CardTitle className="flex flex-row gap-2">
-              <ListTodo className="w-4 h-4 self-center" />
+              <DashboardIcon Icon={Bell} />
               Upcoming Tasks
             </CardTitle>
             <CardDescription>The following tasks are due soon</CardDescription>
@@ -106,7 +107,7 @@ export function DashboardPage() {
         <DashboardCard variant={"large"}>
           <CardHeader>
             <CardTitle className="flex flex-row gap-2">
-              <Route className="w-4 h-4 self-center" />
+              <DashboardIcon Icon={Route} />
               Timeline
             </CardTitle>
             <CardDescription>Watch out for upcoming deadlines</CardDescription>
