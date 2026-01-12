@@ -1,9 +1,10 @@
 import { useCallback, useRef } from "react";
-import { Moon, Sun } from "lucide-react";
+
 import { flushSync } from "react-dom";
 
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/components/theme-provider";
+import { IconMoon, IconSun } from "@tabler/icons-react";
 
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<"button"> {
@@ -54,14 +55,16 @@ export const AnimatedThemeToggler = ({
   }, [duration, setTheme, theme]);
 
   return (
-    <button
-      ref={buttonRef}
-      onClick={toggleTheme}
-      className={cn(className)}
-      {...props}
-    >
-      <span className="sr-only">Toggle theme</span>
-      {theme === "dark" ? <Sun /> : <Moon />}
-    </button>
+    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900">
+      <button
+        ref={buttonRef}
+        onClick={toggleTheme}
+        className={cn(className)}
+        {...props}
+      >
+        <span className="sr-only">Toggle theme</span>
+        {theme === "dark" ? <IconSun /> : <IconMoon />}
+      </button>
+    </div>
   );
 };
