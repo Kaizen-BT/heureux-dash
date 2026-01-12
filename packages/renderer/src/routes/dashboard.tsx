@@ -47,18 +47,9 @@ const timelineItems = [
 
 export function TimelineDemo() {
   return (
-    <Timeline
-      activeIndex={1}
-      orientation="horizontal"
-      className="w-full overflow-x-auto pb-8"
-    >
-      {timelineItems.map((item, idx) => (
-        <TimelineItem
-          key={item.id}
-          className={
-            idx != timelineItems.length - 1 ? `flex-none w-1/2` : `flex-none`
-          }
-        >
+    <Timeline activeIndex={1} orientation="horizontal">
+      {timelineItems.map((item) => (
+        <TimelineItem key={item.id}>
           <TimelineDot />
           <TimelineConnector />
           <TimelineContent>
@@ -120,7 +111,7 @@ export function DashboardPage() {
             </CardTitle>
             <CardDescription>Watch out for upcoming deadlines</CardDescription>
           </CardHeader>
-          <CardContent className="my-auto">
+          <CardContent className="m-auto">
             <TimelineDemo />
           </CardContent>
         </Card>
