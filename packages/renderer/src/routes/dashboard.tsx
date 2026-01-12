@@ -1,13 +1,6 @@
 import { PageGrid } from "@/components/page-grid";
 import { TypographyH1 } from "@/components/typography";
-import {
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Bell, ListTodo, PanelsLeftBottom, Route } from "lucide-react";
-
 import {
   Timeline,
   TimelineConnector,
@@ -20,7 +13,6 @@ import {
   TimelineTitle,
 } from "@/components/ui/timeline";
 import { DashboardCard } from "@/components/cards/dashboard-card";
-import { DashboardIcon } from "@/components/icons/dashboard-icon";
 
 const timelineItems = [
   {
@@ -72,49 +64,27 @@ export function DashboardPage() {
       <TypographyH1>Dashboard</TypographyH1>
       <PageGrid>
         {/* Project Progression Card */}
-        <DashboardCard>
-          <CardHeader>
-            <CardTitle className="flex flex-row gap-2">
-              <DashboardIcon Icon={PanelsLeftBottom} />
-              Project Progression
-            </CardTitle>
-            <CardDescription>Overall Overview</CardDescription>
-          </CardHeader>
-        </DashboardCard>
+        <DashboardCard title="Project Progression" Icon={PanelsLeftBottom} />
 
         {/* Reminder Card */}
-        <DashboardCard>
-          <CardHeader>
-            <CardTitle className="flex flex-row gap-2">
-              <DashboardIcon Icon={ListTodo} />
-              Reminders
-            </CardTitle>
-          </CardHeader>
-        </DashboardCard>
+        <DashboardCard title="Reminders" Icon={ListTodo} />
 
         {/* Upcoming Tasks Card */}
-        <DashboardCard className="row-span-2">
-          <CardHeader>
-            <CardTitle className="flex flex-row gap-2">
-              <DashboardIcon Icon={Bell} />
-              Upcoming Tasks
-            </CardTitle>
-            <CardDescription>The following tasks are due soon</CardDescription>
-          </CardHeader>
-        </DashboardCard>
+        <DashboardCard
+          rowVariant={"large"}
+          title="Upcoming Tasks"
+          description="The following tasks are due soon"
+          Icon={Bell}
+        />
 
         {/* Timeline Card */}
-        <DashboardCard variant={"large"}>
-          <CardHeader>
-            <CardTitle className="flex flex-row gap-2">
-              <DashboardIcon Icon={Route} />
-              Timeline
-            </CardTitle>
-            <CardDescription>Watch out for upcoming deadlines</CardDescription>
-          </CardHeader>
-          <CardContent className="m-auto">
-            <TimelineDemo />
-          </CardContent>
+        <DashboardCard
+          colVariant={"large"}
+          Icon={Route}
+          description="Watch out for upcoming deadlines"
+          title="Timeline"
+        >
+          <TimelineDemo />
         </DashboardCard>
       </PageGrid>
     </>

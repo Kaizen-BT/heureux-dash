@@ -1,22 +1,44 @@
 import type { ComponentProps, ReactElement } from "react";
-import { Card } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
+import {
+  DashboardIcon,
+  type DashboardIconProps,
+} from "@/components/icons/dashboard-icon";
 
-// Variants
+// Variants... lowkey might be overthinking this one
 const dashboardCardVariants = cva("", {
   variants: {
-    variant: {
+    // Determines the number of columns to span over
+    colVariant: {
       normal: ["col-span-4"],
       large: ["col-span-8"],
+      full: ["col-span-12"],
+    },
+    // Determine the number of rows to span over
+    rowVariant: {
+      normal: ["row-span-1"],
+      large: ["row-span-2"],
     },
   },
-  defaultVariants: { variant: "normal" },
+  defaultVariants: { colVariant: "normal", rowVariant: "normal" },
 });
 
 // Props
-type DashboardCardProps = ComponentProps<typeof Card> &
-  VariantProps<typeof dashboardCardVariants>;
+interface DashboardCardProps
+  extends ComponentProps<typeof Card>,
+    VariantProps<typeof dashboardCardVariants>,
+    DashboardIconProps {
+  description?: string;
+  title: string;
+}
 
 /**
  * Utility component to create new dashboard cards
@@ -26,16 +48,29 @@ type DashboardCardProps = ComponentProps<typeof Card> &
  */
 export function DashboardCard({
   className,
-  variant = "normal",
+  colVariant = "normal",
+  rowVariant = "normal",
   children,
+  Icon,
+  description,
+  title,
   ...props
 }: DashboardCardProps): ReactElement {
   return (
     <Card
-      className={cn(dashboardCardVariants({ variant, className }))}
+      className={cn(
+        dashboardCardVariants({ colVariant, rowVariant, className })
+      )}
       {...props}
     >
-      {children}
+      <CardHeader>
+        <CardTitle className="flex flex-row gap-2">
+          <DashboardIcon Icon={Icon} />
+          {title}
+        </CardTitle>
+        {description && <CardDescription>{description}</CardDescription>}
+      </CardHeader>
+      <CardContent>{children}</CardContent>
     </Card>
   );
 }
