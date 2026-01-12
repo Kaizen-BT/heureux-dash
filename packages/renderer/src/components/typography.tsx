@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import type { ComponentProps, ReactElement } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-const headingOneVariants = cva("text-5xl font-bold", {
+const headingOneVariants = cva(["text-5xl", "font-bold"], {
   variants: {
     variant: {
       default: "text-primary",
@@ -32,7 +32,7 @@ export function TypographyH1({
   ...props
 }: TypographyH1Props): ReactElement {
   return (
-    <h1 className={cn(headingOneVariants({ variant }), className)} {...props}>
+    <h1 className={cn(headingOneVariants({ variant, className }))} {...props}>
       {children}
     </h1>
   );

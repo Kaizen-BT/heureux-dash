@@ -1,7 +1,6 @@
 import { PageGrid } from "@/components/page-grid";
 import { TypographyH1 } from "@/components/typography";
 import {
-  Card,
   CardContent,
   CardDescription,
   CardHeader,
@@ -20,6 +19,7 @@ import {
   TimelineTime,
   TimelineTitle,
 } from "@/components/ui/timeline";
+import { DashboardCard } from "@/components/cards/dashboard-card";
 
 const timelineItems = [
   {
@@ -71,7 +71,7 @@ export function DashboardPage() {
       <TypographyH1>Dashboard</TypographyH1>
       <PageGrid>
         {/* Project Progression Card */}
-        <Card className="col-span-4">
+        <DashboardCard>
           <CardHeader>
             <CardTitle className="flex flex-row gap-2">
               <PanelsLeftBottom className="w-4 h-4 self-center" />
@@ -79,20 +79,20 @@ export function DashboardPage() {
             </CardTitle>
             <CardDescription>Overall Overview</CardDescription>
           </CardHeader>
-        </Card>
+        </DashboardCard>
 
         {/* Reminder Card */}
-        <Card className="col-span-4">
+        <DashboardCard>
           <CardHeader>
             <CardTitle className="flex flex-row gap-2">
               <Bell className="w-4 h-4 self-center" />
               Reminders
             </CardTitle>
           </CardHeader>
-        </Card>
+        </DashboardCard>
 
         {/* Upcoming Tasks Card */}
-        <Card className="col-span-4 row-span-2">
+        <DashboardCard className="row-span-2">
           <CardHeader>
             <CardTitle className="flex flex-row gap-2">
               <ListTodo className="w-4 h-4 self-center" />
@@ -100,10 +100,10 @@ export function DashboardPage() {
             </CardTitle>
             <CardDescription>The following tasks are due soon</CardDescription>
           </CardHeader>
-        </Card>
+        </DashboardCard>
 
         {/* Timeline Card */}
-        <Card className="col-span-8">
+        <DashboardCard variant={"large"}>
           <CardHeader>
             <CardTitle className="flex flex-row gap-2">
               <Route className="w-4 h-4 self-center" />
@@ -114,7 +114,7 @@ export function DashboardPage() {
           <CardContent className="m-auto">
             <TimelineDemo />
           </CardContent>
-        </Card>
+        </DashboardCard>
       </PageGrid>
     </>
   );
