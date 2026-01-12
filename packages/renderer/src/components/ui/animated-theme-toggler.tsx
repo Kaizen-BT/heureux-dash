@@ -55,16 +55,14 @@ export const AnimatedThemeToggler = ({
   }, [duration, setTheme, theme]);
 
   return (
-    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900">
-      <button
-        ref={buttonRef}
-        onClick={toggleTheme}
-        className={cn(className)}
-        {...props}
-      >
-        <span className="sr-only">Toggle theme</span>
-        {theme === "dark" ? <IconSun /> : <IconMoon />}
-      </button>
-    </div>
+    <button
+      ref={buttonRef}
+      onClick={toggleTheme}
+      className={cn(className)}
+      {...props}
+    >
+      <span className="sr-only">Toggle theme</span>
+      {theme === "dark" ? <IconSun /> : <IconMoon />}
+    </button>
   );
 };

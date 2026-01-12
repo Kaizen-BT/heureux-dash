@@ -18,10 +18,8 @@ export function RootLayout() {
       <TooltipProvider>
         {/* Dynamic Resize to center page content */}
         <main className="min-h-screen w-full max-w-7xl mx-auto flex flex-col pt-8 gap-8">
-          {/* Page Content */}
-
           <div className="flex flex-row justify-end">
-            <AnimatedThemeToggler className="hover:cursor-pointer" />
+            <AnimatedThemeToggler className="hover:cursor-pointer flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900" />
           </div>
 
           <Outlet />
