@@ -1,4 +1,4 @@
-import { PageGrid } from "@/components/page-grid";
+import { PageGrid, PageHeader } from "@/components/page-grid";
 import { TypographyH1 } from "@/components/typography";
 
 // Cards
@@ -10,7 +10,10 @@ import { UpcomingCard } from "./upcoming-card";
 export function DashboardPage() {
   return (
     <>
-      <TypographyH1>Dashboard</TypographyH1>
+      <PageHeader>
+        <TypographyH1>Dashboard</TypographyH1>
+      </PageHeader>
+
       <PageGrid>
         {/* Project Progression Card */}
         <ProgressionCard progress={45} />
