@@ -20,6 +20,7 @@ export function RootLayout() {
           {/* Page Content */}
           <Outlet />
 
+          {/* TODO Let NavDock style the icons */}
           <NavDock
             navItems={[
               {
