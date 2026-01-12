@@ -1,5 +1,8 @@
 import { PanelsLeftBottom } from "lucide-react";
-import { DashboardCard } from "@/components/cards/dashboard-card";
+import {
+  DashboardCard,
+  DashboardCardContent,
+} from "@/components/cards/dashboard-card";
 import {
   CircularProgress,
   CircularProgressIndicator,
@@ -18,15 +21,16 @@ export function ProgressionCard({ progress: value }: ProgressionCardProps) {
       title="Project Progression"
       description="Overall Overview"
       Icon={PanelsLeftBottom}
-      centerContent
     >
-      <CircularProgress value={value} size={128} thickness={16}>
-        <CircularProgressIndicator>
-          <CircularProgressTrack />
-          <CircularProgressRange />
-        </CircularProgressIndicator>
-        <CircularProgressValueText />
-      </CircularProgress>
+      <DashboardCardContent className="m-auto">
+        <CircularProgress value={value} size={128} thickness={16}>
+          <CircularProgressIndicator>
+            <CircularProgressTrack />
+            <CircularProgressRange />
+          </CircularProgressIndicator>
+          <CircularProgressValueText />
+        </CircularProgress>
+      </DashboardCardContent>
     </DashboardCard>
   );
 }

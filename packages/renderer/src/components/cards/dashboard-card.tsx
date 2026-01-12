@@ -1,7 +1,6 @@
 import type { ComponentProps, ReactElement } from "react";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -38,7 +37,6 @@ interface DashboardCardProps
     DashboardIconProps {
   description?: string;
   title: string;
-  centerContent?: boolean;
 }
 
 /**
@@ -55,7 +53,6 @@ export function DashboardCard({
   Icon,
   description,
   title,
-  centerContent,
   ...props
 }: DashboardCardProps): ReactElement {
   return (
@@ -72,9 +69,11 @@ export function DashboardCard({
         </CardTitle>
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
-      <CardContent className={centerContent ? "m-auto" : ""}>
-        {children}
-      </CardContent>
+
+      {children}
     </Card>
   );
 }
+
+// Re-alias for consistency
+export { CardContent as DashboardCardContent } from "@/components/ui/card";
