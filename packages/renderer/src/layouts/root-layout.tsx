@@ -2,13 +2,14 @@ import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Outlet } from "react-router";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { NavDock } from "@/components/docks/nav-dock";
+import { NavDock } from "@/components/docks/ace-nav-dock";
+
 import {
-  ChartLine,
-  HomeIcon,
-  LayoutDashboard,
-  PanelsTopLeft,
-} from "lucide-react";
+  IconBriefcase,
+  IconChartDots,
+  IconHome,
+  IconLayoutDashboard,
+} from "@tabler/icons-react";
 
 export function RootLayout() {
   return (
@@ -20,15 +21,35 @@ export function RootLayout() {
           <Outlet />
 
           <NavDock
-            items={[
-              { href: "/", icon: <HomeIcon />, label: "Home" },
+            navItems={[
+              {
+                href: "/",
+                icon: (
+                  <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+                ),
+                title: "Home",
+              },
               {
                 href: "/dashboard",
-                icon: <LayoutDashboard />,
-                label: "Dashboard",
+                icon: (
+                  <IconLayoutDashboard className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+                ),
+                title: "Dashboard",
               },
-              { href: "/", icon: <PanelsTopLeft />, label: "Projects" },
-              { href: "/", icon: <ChartLine />, label: "Analytics" },
+              {
+                href: "/",
+                icon: (
+                  <IconBriefcase className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+                ),
+                title: "Projects",
+              },
+              {
+                href: "/",
+                icon: (
+                  <IconChartDots className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+                ),
+                title: "Analytics",
+              },
             ]}
           />
           <Toaster />

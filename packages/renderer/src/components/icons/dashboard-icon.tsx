@@ -1,6 +1,6 @@
 import type { ComponentType, HTMLAttributes, ReactElement } from "react";
 
-type IconProps = HTMLAttributes<SVGElement>;
+export type IconProps = HTMLAttributes<SVGElement>;
 
 export interface DashboardIconProps {
   Icon: ComponentType<IconProps>;
