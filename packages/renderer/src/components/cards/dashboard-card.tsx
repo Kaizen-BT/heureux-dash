@@ -38,6 +38,7 @@ interface DashboardCardProps
     DashboardIconProps {
   description?: string;
   title: string;
+  centerContent?: boolean;
 }
 
 /**
@@ -54,6 +55,7 @@ export function DashboardCard({
   Icon,
   description,
   title,
+  centerContent,
   ...props
 }: DashboardCardProps): ReactElement {
   return (
@@ -70,7 +72,9 @@ export function DashboardCard({
         </CardTitle>
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
-      <CardContent>{children}</CardContent>
+      <CardContent className={centerContent ? "m-auto" : ""}>
+        {children}
+      </CardContent>
     </Card>
   );
 }

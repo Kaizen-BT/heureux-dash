@@ -1,6 +1,6 @@
 import { PageGrid } from "@/components/page-grid";
 import { TypographyH1 } from "@/components/typography";
-import { Bell, ListTodo, PanelsLeftBottom, Route } from "lucide-react";
+import { Bell, ListTodo, Route } from "lucide-react";
 import {
   Timeline,
   TimelineConnector,
@@ -13,6 +13,7 @@ import {
   TimelineTitle,
 } from "@/components/ui/timeline";
 import { DashboardCard } from "@/components/cards/dashboard-card";
+import { ProgressionCard } from "@/components/cards/progress-card";
 
 const timelineItems = [
   {
@@ -64,7 +65,7 @@ export function DashboardPage() {
       <TypographyH1>Dashboard</TypographyH1>
       <PageGrid>
         {/* Project Progression Card */}
-        <DashboardCard title="Project Progression" Icon={PanelsLeftBottom} />
+        <ProgressionCard progress={45} />
 
         {/* Reminder Card */}
         <DashboardCard title="Reminders" Icon={ListTodo} />
@@ -83,6 +84,7 @@ export function DashboardPage() {
           Icon={Route}
           description="Watch out for upcoming deadlines"
           title="Timeline"
+          centerContent
         >
           <TimelineDemo />
         </DashboardCard>
