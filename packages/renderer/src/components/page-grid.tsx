@@ -2,7 +2,7 @@ import type { PropsWithChildren } from "react";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { TypographyH1 } from "@/components/typography";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { IconBrandGithub, IconSettings } from "@tabler/icons-react";
 
 /**
