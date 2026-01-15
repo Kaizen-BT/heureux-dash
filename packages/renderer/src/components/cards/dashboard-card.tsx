@@ -14,7 +14,7 @@ import {
 import { TypographyH4 } from "@/components/typography";
 
 // Variants... lowkey might be overthinking this one
-const dashboardCardVariants = cva("", {
+const dashboardCardVariants = cva("bg-card border border-solid border-card", {
   variants: {
     // Determines the number of columns to span over
     colVariant: {
