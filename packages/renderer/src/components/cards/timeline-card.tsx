@@ -61,12 +61,7 @@ function TimelineDemo() {
 
 export function TimelineCard() {
   return (
-    <DashboardCard
-      colVariant={"large"}
-      Icon={Route}
-      description="Watch out for upcoming deadlines"
-      title="Timeline"
-    >
+    <DashboardCard colVariant={"large"} Icon={Route} title="Timeline">
       <DashboardCardContent className="m-auto">
         <TimelineDemo />
       </DashboardCardContent>

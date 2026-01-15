@@ -17,11 +17,7 @@ interface ProgressionCardProps {
 
 export function ProgressionCard({ progress: value }: ProgressionCardProps) {
   return (
-    <DashboardCard
-      title="Project Progression"
-      description="Overall Overview"
-      Icon={PanelsLeftBottom}
-    >
+    <DashboardCard title="Project Progression" Icon={PanelsLeftBottom}>
       <DashboardCardContent className="m-auto">
         <CircularProgress value={value} size={128} thickness={16}>
           <CircularProgressIndicator>
