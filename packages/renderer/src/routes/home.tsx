@@ -1,6 +1,13 @@
 import { getProject } from "@app/preload";
 import { Quote } from "@/components/quotes";
-import { PageGrid, PageHeader } from "@/components/page-grid";
+import {
+  PageActions,
+  PageGrid,
+  PageHeader,
+  PageTitle,
+} from "@/components/page-grid";
+import { Button } from "@/components/ui/button";
+import { IconCirclePlus, IconNewSection } from "@tabler/icons-react";
 
 export async function ProjectLoader() {
   const project = await getProject(1);
@@ -10,7 +17,17 @@ export async function ProjectLoader() {
 export function HomePage() {
   return (
     <>
-      <PageHeader></PageHeader>
+      <PageHeader>
+        <PageTitle title="Home Page" />
+        <PageActions>
+          <Button className="rounded-full">
+            <IconCirclePlus />
+          </Button>
+          <Button className="rounded-full">
+            <IconNewSection />
+          </Button>
+        </PageActions>
+      </PageHeader>
       <PageGrid>
         <div className="col-span-12 m-auto">
           <Quote quote="Todo -  Center me bro" />

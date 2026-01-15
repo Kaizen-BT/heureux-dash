@@ -1,8 +1,12 @@
 import type { PropsWithChildren } from "react";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import { TypographyH1 } from "@/components/typography";
+import { Separator } from "@/components/ui/separator";
+import { Button } from "./ui/button";
+import { IconBrandGithub, IconSettings } from "@tabler/icons-react";
 
 /**
- * 12-Col Grid
+ * Flexible 12-Col Grid
  */
 export function PageGrid({ children }: PropsWithChildren) {
   return (
@@ -10,11 +14,38 @@ export function PageGrid({ children }: PropsWithChildren) {
   );
 }
 
+/**
+ * Renders content provided in the header of the page
+ */
 export function PageHeader({ children }: PropsWithChildren) {
   return (
-    <section className="flex flex-row justify-between">
+    <section className="flex flex-row justify-between">{children}</section>
+  );
+}
+
+/**
+ * Renders a title using a big header
+ */
+export function PageTitle({ title }: { title: string }) {
+  return <TypographyH1>{title}</TypographyH1>;
+}
+
+export function PageActions({ children }: PropsWithChildren) {
+  return (
+    <div className="flex flex-row gap-6 items-center">
       {children}
-      <AnimatedThemeToggler className="hover:cursor-pointer ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900" />
-    </section>
+      {children && (
+        <Separator className="h-full bg-primary" orientation="vertical" />
+      )}
+      {/* Universal actions */}
+
+      <Button className="rounded-full">
+        <IconBrandGithub />
+      </Button>
+      <Button className="rounded-full">
+        <IconSettings />
+      </Button>
+      <AnimatedThemeToggler className="hover:cursor-pointer ml-auto rounded-full" />
+    </div>
   );
 }

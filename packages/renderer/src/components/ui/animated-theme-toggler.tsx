@@ -5,6 +5,7 @@ import { flushSync } from "react-dom";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/components/theme-provider";
 import { IconMoon, IconSun } from "@tabler/icons-react";
+import { Button } from "@/components/ui/button";
 
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<"button"> {
@@ -55,7 +56,7 @@ export const AnimatedThemeToggler = ({
   }, [duration, setTheme, theme]);
 
   return (
-    <button
+    <Button
       ref={buttonRef}
       onClick={toggleTheme}
       className={cn(className)}
@@ -63,6 +64,6 @@ export const AnimatedThemeToggler = ({
     >
       <span className="sr-only">Toggle theme</span>
       {theme === "dark" ? <IconSun /> : <IconMoon />}
-    </button>
+    </Button>
   );
 };

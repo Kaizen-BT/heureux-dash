@@ -16,7 +16,7 @@ export function RootLayout() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <TooltipProvider>
         {/* Dynamic Resize to center page content */}
-        <main className="min-h-screen w-full max-w-7xl mx-auto flex flex-col pt-8 gap-8">
+        <main className="min-h-screen w-full max-w-7xl mx-auto flex flex-col py-6">
           <Outlet />
 
           {/* TODO Let NavDock style the icons */}
