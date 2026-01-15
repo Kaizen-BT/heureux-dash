@@ -13,5 +13,5 @@ export interface DashboardIconProps {
  * @returns {ReactElement}
  */
 export function DashboardIcon({ Icon }: DashboardIconProps): ReactElement {
-  return <Icon className="w-4 h-4 self-center shrink-0" />;
+  return <Icon className="w-5 h-5 self-center shrink-0 text-primary" />;
 }

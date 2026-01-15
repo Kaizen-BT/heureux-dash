@@ -11,6 +11,7 @@ import {
   DashboardIcon,
   type DashboardIconProps,
 } from "@/components/icons/dashboard-icon";
+import { TypographyH4 } from "@/components/typography";
 
 // Variants... lowkey might be overthinking this one
 const dashboardCardVariants = cva("", {
@@ -65,7 +66,7 @@ export function DashboardCard({
       <CardHeader>
         <CardTitle className="flex flex-row gap-2">
           <DashboardIcon Icon={Icon} />
-          {title}
+          <TypographyH4 variant={"foreground"}>{title}</TypographyH4>
         </CardTitle>
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
