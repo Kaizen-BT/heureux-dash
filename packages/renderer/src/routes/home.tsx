@@ -14,9 +14,7 @@ export function HomePage() {
         <PageActions />
       </PageHeader>
       <PageGrid>
-        <div className="col-span-12 m-auto">
-          <Quote quote="Todo -  Center me bro" />
-        </div>
+        <Quote quote="Todo -  Center me bro" className="col-span-12 m-auto" />
       </PageGrid>
     </>
   );

@@ -10,7 +10,9 @@ import { IconBrandGithub, IconSettings } from "@tabler/icons-react";
  */
 export function PageGrid({ children }: PropsWithChildren) {
   return (
-    <section className="flex-1 grid grid-cols-12 gap-6">{children}</section>
+    <section className="flex-1 grid grid-cols-12 gap-6 py-6">
+      {children}
+    </section>
   );
 }
 
