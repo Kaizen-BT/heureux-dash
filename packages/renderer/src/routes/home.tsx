@@ -1,13 +1,6 @@
 import { getProject } from "@app/preload";
 import { Quote } from "@/components/quotes";
-import {
-  PageActions,
-  PageGrid,
-  PageHeader,
-  PageTitle,
-} from "@/components/page-grid";
-import { Button } from "@/components/ui/button";
-import { IconCirclePlus, IconNewSection } from "@tabler/icons-react";
+import { PageActions, PageGrid, PageHeader } from "@/components/page-grid";
 
 export async function ProjectLoader() {
   const project = await getProject(1);
@@ -18,15 +11,7 @@ export function HomePage() {
   return (
     <>
       <PageHeader>
-        <PageTitle title="Home Page" />
-        <PageActions>
-          <Button className="rounded-full">
-            <IconCirclePlus />
-          </Button>
-          <Button className="rounded-full">
-            <IconNewSection />
-          </Button>
-        </PageActions>
+        <PageActions />
       </PageHeader>
       <PageGrid>
         <div className="col-span-12 m-auto">

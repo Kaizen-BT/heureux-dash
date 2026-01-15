@@ -32,7 +32,7 @@ export function PageTitle({ title }: { title: string }) {
 
 export function PageActions({ children }: PropsWithChildren) {
   return (
-    <div className="flex flex-row gap-6 items-center">
+    <div className="flex flex-row gap-6 items-center ml-auto">
       {children}
       {children && (
         <Separator className="h-full bg-primary" orientation="vertical" />
@@ -45,7 +45,7 @@ export function PageActions({ children }: PropsWithChildren) {
       <Button className="rounded-full">
         <IconSettings />
       </Button>
-      <AnimatedThemeToggler className="hover:cursor-pointer ml-auto rounded-full" />
+      <AnimatedThemeToggler className="rounded-full" />
     </div>
   );
 }
