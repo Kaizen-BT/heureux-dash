@@ -10,8 +10,8 @@ import { ProgressionCard } from "@/components/cards/progress-card";
 import { TimelineCard } from "@/components/cards/timeline-card";
 import { ReminderCard } from "@/components/cards/reminder-card";
 import { UpcomingCard } from "@/components/cards/upcoming-card";
-import { Button } from "@/components/ui/button";
 import { IconCirclePlus } from "@tabler/icons-react";
+import { ButtonRounded } from "@/components/buttons/button-rounded";
 
 export function DashboardPage() {
   return (
@@ -19,9 +19,9 @@ export function DashboardPage() {
       <PageHeader>
         <PageTitle title="Dashboard" />
         <PageActions>
-          <Button className="rounded-full">
+          <ButtonRounded>
             <IconCirclePlus />
-          </Button>
+          </ButtonRounded>
         </PageActions>
       </PageHeader>
 

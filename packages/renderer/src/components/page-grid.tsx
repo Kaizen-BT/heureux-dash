@@ -4,6 +4,7 @@ import { TypographyH1 } from "@/components/typography";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { IconBrandGithub, IconSettings } from "@tabler/icons-react";
+import { ButtonRounded } from "./buttons/button-rounded";
 
 /**
  * Flexible 12-Col Grid
@@ -39,12 +40,14 @@ export function PageActions({ children }: PropsWithChildren) {
       )}
       {/* Universal actions */}
 
-      <Button className="rounded-full" size={"icon"}>
+      <ButtonRounded>
         <IconBrandGithub />
-      </Button>
-      <Button className="rounded-full" size={"icon"}>
+      </ButtonRounded>
+
+      <ButtonRounded>
         <IconSettings />
-      </Button>
+      </ButtonRounded>
+
       <AnimatedThemeToggler className="rounded-full" />
     </div>
   );
