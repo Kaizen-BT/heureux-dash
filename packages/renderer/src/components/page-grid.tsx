@@ -20,9 +20,7 @@ export function PageGrid({ children }: PropsWithChildren) {
  * Renders content provided in the header of the page
  */
 export function PageHeader({ children }: PropsWithChildren) {
-  return (
-    <section className="flex flex-row justify-between">{children}</section>
-  );
+  return <section className="flex flex-row">{children}</section>;
 }
 
 /**
@@ -34,7 +32,7 @@ export function PageTitle({ title }: { title: string }) {
 
 export function PageActions({ children }: PropsWithChildren) {
   return (
-    <div className="flex flex-row gap-6 items-center ml-auto">
+    <div className="flex flex-row items-center gap-6 ml-auto">
       {children}
       {children && (
         <Separator className="h-full bg-primary" orientation="vertical" />
