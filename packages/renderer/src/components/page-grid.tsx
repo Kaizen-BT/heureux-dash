@@ -39,10 +39,10 @@ export function PageActions({ children }: PropsWithChildren) {
       )}
       {/* Universal actions */}
 
-      <Button className="rounded-full">
+      <Button className="rounded-full" size={"icon"}>
         <IconBrandGithub />
       </Button>
-      <Button className="rounded-full">
+      <Button className="rounded-full" size={"icon"}>
         <IconSettings />
       </Button>
       <AnimatedThemeToggler className="rounded-full" />

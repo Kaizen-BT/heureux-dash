@@ -60,6 +60,7 @@ export const AnimatedThemeToggler = ({
       ref={buttonRef}
       onClick={toggleTheme}
       className={cn(className)}
+      size={"icon"}
       {...props}
     >
       <span className="sr-only">Toggle theme</span>
